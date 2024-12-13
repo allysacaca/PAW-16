@@ -24,14 +24,11 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-
-Route::get('home', [HomeController::class, 'index'])->name('home')->Middleware('auth');
+Auth::routes();
 
 Route::get('profile', ProfileController::class)->name('profile')->Middleware('auth');
 
 Route::resource('employees', EmployeeController::class)->Middleware('auth');
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

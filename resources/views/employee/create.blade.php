@@ -16,6 +16,8 @@
 
         <div class="container">
             <a href="{{ route('home') }}" class="navbar-brand mb-0 h1"><i class="bi-hexagon-fill me-2"></i> Data
+                <form action="{{ route('employees.store') }}" method="POST"
+                enctype="multipart/form-data">
                 Master</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent">
@@ -85,6 +87,11 @@
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="cv" class="form-label">Curriculum Vitae (CV)</label>
+                            <input type="file" class="form-control" name="cv" id="cv">
+                        </div>
+
                     </div>
                     <hr>
                     <div class="row">
